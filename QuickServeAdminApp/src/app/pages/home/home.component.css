@@ -1,0 +1,84 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-align: center;
+  background: url('https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #FF6347;
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+mat-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+mat-card h2 {
+  font-size: 22px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+mat-card p {
+  font-size: 18px;
+  color: #ff6347;
+  font-weight: 600;
+}
+
+mat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+mat-card[data-icon='👥'] {
+  background-color: #675f5f;
+}
+
+mat-card[data-icon='👥']:hover {
+  background-color: #ffccd5;
+}
+
+mat-card h2, mat-card p {
+  transition: color 0.3s ease;
+}
+
+mat-card:hover h2 {
+  color: #ff3f6c;
+}
+
+mat-card:hover p {
+  color: #ff6347;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}

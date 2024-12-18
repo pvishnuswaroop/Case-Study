@@ -1,0 +1,65 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- Side Navigation Panel -->
+  <mat-sidenav #drawer mode="side" class="sidenav" [opened]="false">
+    <mat-toolbar color="primary" class="sidenav-toolbar">
+      <img src="https://beedatatech.com/Quickserve/assets/img/logo.png" alt="Quickserve Logo" class="logo">
+    </mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button routerLink="/home" class="nav-button">
+          <mat-icon>home</mat-icon> 
+          <span class="nav-text">Home</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/manage-users" class="nav-button">
+          <mat-icon>group</mat-icon> 
+          <span class="nav-text">Manage Users</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/manage-restaurants" class="nav-button">
+          <mat-icon>restaurant</mat-icon>
+          <span class="nav-text">Manage Restaurants</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/ratings" class="nav-button">
+          <mat-icon>star</mat-icon> 
+          <span class="nav-text">Ratings & Reviews</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/add-admin" class="nav-button">
+          <mat-icon>person_add</mat-icon>
+          <span class="nav-text">Add Admin</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button (click)="logout()" class="nav-button">
+          <mat-icon>logout</mat-icon>
+          <span class="nav-text">Logout</span>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <!-- Top Toolbar -->
+    <mat-toolbar color="primary" class="top-toolbar">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="toolbar-title">{{ isLoggedIn ? 'Admin Panel' : 'Quickserve' }}</span>
+      <!-- Welcome Message with Icon -->
+      <span class="welcome-message" *ngIf="isLoggedIn">
+        <mat-icon>account_circle</mat-icon> 
+        Welcome Admin
+      </span>
+    </mat-toolbar>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

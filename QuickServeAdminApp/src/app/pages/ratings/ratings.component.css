@@ -1,0 +1,120 @@
+/* Overall page styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Toolbar styling */
+mat-toolbar {
+  background-color: #000000; /* Swiggy-like Orange */
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Search container styling */
+.search-container {
+  display: flex;
+  align-items: center; /* Ensures input and button align vertically */
+  gap: 15px;
+  margin: 20px;
+  justify-content: flex-start; /* Aligns elements to the left */
+  width: 100%;
+}
+
+/* Search bar styling */
+mat-form-field {
+  flex-grow: 1; /* Allows input to grow and match button width */
+  height: 50px; /* Ensures input field height matches button */
+  margin: 0; /* Remove any margins */
+}
+
+input {
+  font-size: 16px;
+  padding: 12px 20px; /* Adjust padding for consistency */
+  height: 50px; /* Matches button height */
+  width: 100%;
+  color: #333;
+  border: 1px solid #ddd; /* Lighter border color */
+  border-radius: 25px 0 0 25px; /* Rounded left side */
+  outline: none;
+}
+
+input:focus {
+  box-shadow: none !important;
+  border-color: #ff6f00 !important; /* Swiggy Orange for focus */
+}
+
+/* Search button styling */
+.search-container button {
+  background-color: #ff6f00; /* Swiggy Orange */
+  color: white !important; /* White text */
+  border-radius: 30px; /* Rounded corners */
+  height: 50px; /* Same height as the input field */
+  padding: 0 30px; /* Adjust padding for button */
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #e65c00; /* Darker orange on hover */
+  color: white !important;
+}
+
+/* Ratings list styling */
+.ratings-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.rating-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rating-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-header {
+  background-color: #f9f9f9;
+  padding: 15px;
+}
+
+mat-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+mat-card-subtitle {
+  font-size: 14px;
+  color: #ff5a5f; /* Swiggy Red */
+}
+
+mat-card-content {
+  padding: 15px;
+  font-size: 16px;
+  color: #666;
+}
+
+small {
+  color: #aaa;
+  font-size: 12px;
+}

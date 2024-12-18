@@ -1,0 +1,11 @@
+<h2 mat-dialog-title class="menu-title">Restaurant Menu</h2>
+<div mat-dialog-content class="menu-content">
+  <ul class="menu-list">
+    <li *ngFor="let item of menuItems" class="menu-item">
+      <strong>{{ item.itemName }}</strong> - {{ item.price | currency:'INR' }}
+    </li>
+  </ul>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button class="close-button" (click)="closeDialog()">Close</button>
+</div>

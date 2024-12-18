@@ -1,0 +1,77 @@
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff3f6c;
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header .logo h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.admin-header nav {
+  display: flex;
+  gap: 20px;
+}
+
+.admin-header nav a {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.admin-header nav a:hover {
+  background-color: #ff6347;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.admin-header nav a.active {
+  background-color: #ff6347;
+  color: white;
+}
+
+.admin-header button {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.admin-header button:hover {
+  background-color: #e6395b;
+  transform: translateY(-2px);
+}
+
+.admin-header button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .admin-header nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

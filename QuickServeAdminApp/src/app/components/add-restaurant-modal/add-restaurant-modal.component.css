@@ -1,0 +1,145 @@
+/* add-restaurant.component.scss */
+.add-restaurant-container {
+  max-width: 1000px; /* Increased maximum width for wider form */
+  margin: 0 auto;
+  padding: 30px; /* Adjusted padding */
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  max-height: 80vh; /* Limit height to 80% of the viewport height */
+  overflow-y: auto; /* Enable vertical scroll if content exceeds the height */
+}
+
+.add-restaurant-container:hover {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Increased margin for more spacing between inputs */
+  transition: margin-bottom 0.3s ease;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+input {
+  width: 100%;
+  padding: 15px 20px; /* Increased padding for larger input fields */
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 18px; /* Increased font size for better readability */
+  background-color: #fafafa;
+  color: #333;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+input:focus {
+  border-color: #007aff;
+  background-color: #fff;
+  outline: none;
+}
+
+input:focus::placeholder {
+  color: #007aff;
+}
+
+input::placeholder {
+  color: #bbb;
+}
+
+button {
+  width: 100%;
+  padding: 15px 0; /* Increased padding for larger button */
+  background-color: #007aff;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background-color: #0051b5;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .add-restaurant-container {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  input {
+    font-size: 17px; /* Adjusted font size for smaller screens */
+  }
+
+  button {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .add-restaurant-container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  input {
+    font-size: 16px; /* Adjusted font size for smaller screens */
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-restaurant-container {
+    width: 90%; /* Full width on very small screens */
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  input {
+    font-size: 10px; /* Adjusted font size for very small screens */
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
+

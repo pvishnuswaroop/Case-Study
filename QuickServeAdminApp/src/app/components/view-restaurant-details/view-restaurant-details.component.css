@@ -1,0 +1,146 @@
+/* Title Styling */
+.restaurant-details-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: #ff6f61; /* Swiggy brand color */
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  text-transform: uppercase; /* Make it more dynamic */
+}
+
+/* Content Styling */
+.restaurant-details-content {
+  padding: 25px 40px; /* Increased padding */
+  font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #333;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Soft shadow effect */
+  line-height: 1.8;
+  max-width: 900px; /* Increased max-width */
+  width: 110%; /* Full width on smaller screens */
+  margin: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.restaurant-details-content:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Detail Row Styling */
+.detail-row {
+  margin-bottom: 18px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-row strong {
+  font-weight: 700;
+  color: #555;
+}
+
+/* Status Styling */
+.status {
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.status.active {
+  color: #4caf50; /* Green for Active */
+}
+
+.status.inactive {
+  color: #f44336; /* Red for Inactive */
+}
+
+/* Dialog Actions */
+.dialog-actions {
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  border-radius: 0 0 12px 12px;
+}
+
+.close-button {
+  background-color: #ff6f61; /* Swiggy brand color */
+  color: white;
+  padding: 14px 30px;
+  border-radius: 50px; /* Rounded button */
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #e55d4f; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.close-button:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .restaurant-details-content {
+    padding: 25px;
+    max-width: 130%; /* Reduced max-width for larger screens */
+  }
+
+  .restaurant-details-title {
+    font-size: 22px;
+  }
+
+  .detail-row {
+    font-size: 16px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .detail-row strong {
+    margin-bottom: 8px;
+  }
+
+  .close-button {
+    background-color: #ff6f61; /* Swiggy brand color */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px; /* Fully rounded button */
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .close-button:hover {
+    background-color: #e55d4f; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+
+  .close-button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.6); /* Glow effect on focus */
+  }
+
+  .close-button span {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+}

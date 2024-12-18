@@ -1,0 +1,14 @@
+<header class="admin-header">
+    <div class="logo">
+      <h1>Quickserve</h1>
+    </div>
+    <nav>
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+      <a routerLink="/manage-users" routerLinkActive="active">Manage Users</a>
+      <a routerLink="/manage-restaurants">Manage Restaurants</a>
+      <a routerLink="/ratings" mat-button>Ratings & Reviews</a>
+      <a mat-button routerLink="/add-admin" routerLinkActive="active">Add Admin</a>
+      <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+    </nav>
+  </header>
+  

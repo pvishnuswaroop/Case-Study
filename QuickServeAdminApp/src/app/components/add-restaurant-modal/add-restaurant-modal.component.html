@@ -1,0 +1,37 @@
+<!-- add-restaurant.component.html -->
+<div class="add-restaurant-container">
+  
+    <h2>Add Restaurant</h2>
+    <form [formGroup]="addRestaurantForm" (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label for="restaurantName">Restaurant Name</label>
+        <input id="restaurantName" formControlName="restaurantName" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input id="location" formControlName="location" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" formControlName="phoneNumber" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="ownerName">Owner Name</label>
+        <input id="ownerName" formControlName="ownerName" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="ownerEmail">Owner Email</label>
+        <input id="ownerEmail" formControlName="ownerEmail" type="email" />
+      </div>
+      <div class="form-group">
+        <label for="ownerPassword">Owner Password</label>
+        <input id="ownerPassword" formControlName="ownerPassword" type="password" />
+      </div>
+      <div class="form-group">
+        <label for="ownerContact">Owner Contact</label>
+        <input id="ownerContact" formControlName="ownerContact" type="text" />
+      </div>
+      <button type="submit" [disabled]="isSubmitting">Submit</button>
+    </form>
+  </div>
+  

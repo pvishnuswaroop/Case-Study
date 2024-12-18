@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+    <span>Ratings & Reviews</span>
+  </mat-toolbar>
+  
+  <div class="search-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Search by Restaurant Name</mat-label>
+      <input
+        matInput
+        [(ngModel)]="searchTerm"
+        (keyup.enter)="searchRatings()"
+        placeholder="Enter restaurant name"
+      />
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="searchRatings()">
+      Search
+    </button>
+  </div>
+  
+  <div class="ratings-list">
+    <mat-card *ngFor="let rating of filteredRatings" class="rating-card">
+      <mat-card-header>
+        <mat-card-title>{{ rating.restaurantName || 'Unknown Restaurant' }}</mat-card-title>
+        <mat-card-subtitle>Rating: {{ rating.ratingScore }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ rating.reviewText }}</p>
+        <small>Reviewed on: {{ rating.ratingDate | date: 'mediumDate' }}</small>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

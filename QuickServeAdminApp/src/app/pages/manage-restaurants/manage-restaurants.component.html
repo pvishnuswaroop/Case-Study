@@ -1,0 +1,57 @@
+<div class="manage-restaurants-container">
+  <h1 class="page-title">Manage Restaurants</h1>
+
+  <!-- Search Bar and Add Restaurant Button -->
+  <div class="header-actions">
+    <div class="search-bar">
+      <input
+        type="text"
+        matInput
+        [(ngModel)]="searchTerm"
+        (keyup.enter)="search()"
+        placeholder="Search Restaurants"
+        class="search-input"
+      />
+      <button mat-button (click)="search()" class="search-btn">Search</button>
+    </div>
+    <button mat-raised-button color="primary" (click)="openAddRestaurantModal()" class="add-btn">Add Restaurant</button>
+  </div>
+
+  <!-- Table for Restaurants -->
+  <table mat-table [dataSource]="filteredRestaurants" class="restaurant-table">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="table-header"> Name </th>
+      <td mat-cell *matCellDef="let restaurant" class="table-cell"> {{ restaurant.name }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef class="table-header"> Location </th>
+      <td mat-cell *matCellDef="let restaurant" class="table-cell"> {{ restaurant.location }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef class="table-header"> Actions </th>
+      <td mat-cell *matCellDef="let restaurant" class="table-cell">
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-btn">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="viewRestaurantDetails(restaurant)">
+            <mat-icon>info</mat-icon> View Details
+          </button>
+          <button mat-menu-item (click)="viewMenu(restaurant)">
+            <mat-icon>restaurant_menu</mat-icon> View Menu
+          </button>
+        </mat-menu>
+        <button mat-button color="accent" (click)="updateRestaurant(restaurant)" class="update-btn">Update</button>
+        <button mat-button color="warn" (click)="toggleRestaurantStatus(restaurant)" class="status-btn">
+          {{ restaurant.isActive ? 'Deactivate' : 'Activate' }}
+        </button>
+        <!-- <button mat-button color="warn" (click)="confirmDeleteRestaurant(restaurant)" class="delete-btn">Delete</button> -->
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

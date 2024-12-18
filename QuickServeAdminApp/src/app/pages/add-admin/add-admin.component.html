@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-title>Add New Admin</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="Enter admin's name" />
+          <mat-error *ngIf="adminForm.get('name')?.hasError('required')">Name is required</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="Enter admin's email" />
+          <mat-error *ngIf="adminForm.get('email')?.hasError('required')">Email is required</mat-error>
+          <mat-error *ngIf="adminForm.get('email')?.hasError('email')">Enter a valid email</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" placeholder="Enter password" />
+          <mat-error *ngIf="adminForm.get('password')?.hasError('required')">Password is required</mat-error>
+          <mat-error *ngIf="adminForm.get('password')?.hasError('minlength')">
+            Password must be at least 6 characters
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Contact Number</mat-label>
+          <input matInput formControlName="contactNumber" placeholder="Enter contact number" />
+          <mat-error *ngIf="adminForm.get('contactNumber')?.hasError('required')">Contact number is required</mat-error>
+          <mat-error *ngIf="adminForm.get('contactNumber')?.hasError('pattern')">
+            Enter a valid 10-digit contact number
+          </mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit">Register Admin</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

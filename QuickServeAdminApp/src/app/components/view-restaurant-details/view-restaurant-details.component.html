@@ -1,0 +1,21 @@
+<h2 mat-dialog-title class="restaurant-details-title">Restaurant Details</h2>
+<div mat-dialog-content class="restaurant-details-content">
+  <div class="detail-row">
+    <strong>Name:</strong> <span>{{ restaurantDetails?.name }}</span>
+  </div>
+  <div class="detail-row">
+    <strong>Location:</strong> <span>{{ restaurantDetails?.location }}</span>
+  </div>
+  <div class="detail-row">
+    <strong>Phone Number:</strong> <span>{{ restaurantDetails?.phoneNumber }}</span>
+  </div>
+  <div class="detail-row">
+    <strong>Status:</strong> 
+    <span class="status" [ngClass]="restaurantDetails?.isActive ? 'active' : 'inactive'">
+      {{ restaurantDetails?.isActive ? 'Active' : 'Inactive' }}
+    </span>
+  </div>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button class="close-button" (click)="closeDialog()">Close</button>
+</div>

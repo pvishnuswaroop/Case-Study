@@ -1,0 +1,165 @@
+.manage-users {
+  position: relative;
+  background-color: #f4f7fc;
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+  overflow: hidden;
+}
+
+.manage-users::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+  z-index: -1; /* Ensure the overlay is behind content */
+}
+
+.manage-users h1 {
+  text-align: center;
+  color: #ff6f00; /* Swiggy Orange */
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  align-items: center; /* Ensures search bar and button are aligned */
+  width: 100%; /* Ensures the container stretches across the screen */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 60%; /* Ensures the search bar takes up the full width */
+  max-width: 600px; /* Restricts the maximum width of the search bar */
+  height: 60px;
+  background-color: #fff;
+  border-radius: 70px;
+}
+
+.search-bar input {
+  background-color: transparent !important; /* Make the input background transparent */
+  border: none !important; /* Remove the default input border */
+  outline: none !important; /* Remove the outline on focus */
+  color: #000000; /* Keep the text color dark for readability */
+  font-size: 16px; /* Slightly larger text for better readability */
+  width: 100%; /* Ensures the input takes up full width inside the bar */
+  padding: 0 20px; /* Adjusted padding to give more space */
+  border-radius: 10px 0 0 10px; /* Rounded corners on left side */
+}
+
+.search-bar input::placeholder {
+  color: #999; /* Subtle gray placeholder text */
+}
+
+.search-btn {
+  background-color: #ff6f00; /* Swiggy's Orange color */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  transition: background-color 0.3s ease; /* Smooth color transition on hover */
+  border: none; /* Remove border for cleaner design */
+}
+
+.search-btn:hover {
+  background-color: #e65c00; /* Darker orange for hover effect */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tab-group {
+  margin-top: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  background-color: #ff6f00;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-cell {
+  padding: 12px 20px;
+}
+
+.table-header {
+  background-color: #ff6f00;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px;
+}
+
+.table-row:hover {
+  background-color: #f5f5f5;
+}
+
+button.mat-raised-button, button.mat-button {
+  background-color: #ff6f00; /* Swiggy-like Orange */
+  color: white;
+  text-transform: none; /* Prevents uppercase text */
+  border-radius: 25px; /* Rounded corners */
+  padding: 10px 20px;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.mat-raised-button:hover, button.mat-button:hover {
+  background-color: #e65c00; /* Slightly darker orange for hover effect */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button.mat-raised-button:focus, button.mat-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 2px rgba(255, 105, 0, 0.8); /* Orange outline for focus */
+}
+
+/* Warning Button Styles (for delete) */
+button.mat-raised-button[color="warn"], button.mat-button[color="warn"] {
+  background-color: #f44336; /* Red for delete */
+  color: white;
+}
+
+button.mat-raised-button[color="warn"]:hover, button.mat-button[color="warn"]:hover {
+  background-color: #d32f2f; /* Darker red for hover */
+}
+
+/* Action Buttons (View Orders/Payments) */
+button.action-btn {
+  background-color: #ff7700; /* Green for view buttons */
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-right: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.action-btn:hover {
+  background-color:  #ff7700; /* Darker green for hover effect */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}

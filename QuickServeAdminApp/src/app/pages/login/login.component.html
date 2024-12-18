@@ -1,0 +1,23 @@
+<div class="login-container">
+  <div class="login-box">
+    <img src="https://beedatatech.com/Quickserve/assets/img/logo.png" alt="Logo" class="logo" />
+    <h2>Welcome Back</h2>
+    <p class="sub-heading">Sign in to manage your admin dashboard</p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="Enter your email" />
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Invalid email format</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" placeholder="Enter your password" />
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="login-button" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </div>
+</div>

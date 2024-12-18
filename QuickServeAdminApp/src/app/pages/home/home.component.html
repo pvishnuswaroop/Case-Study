@@ -1,0 +1,46 @@
+<div class="home-container">
+  <h1>Admin Dashboard</h1>
+  <div class="cards-container">
+    <mat-card *ngIf="reports">
+      <h2>Total Users</h2>
+      <p>{{ reports.totalUsers }}</p>
+    </mat-card>   
+    <mat-card *ngIf="reports">
+      <h2>Active Users</h2>
+      <p>{{ reports.activeUsers }}</p>
+    </mat-card>
+    <mat-card *ngIf="reports">
+      <h2>Suspended Users</h2>
+      <p>{{ reports.suspendedUsers }}</p>
+    </mat-card>
+    
+    <mat-card *ngIf="reports">
+      <h2>Total Restaurants</h2>
+      <p>{{ reports.totalRestaurants }}</p>
+    </mat-card>
+    <mat-card *ngIf="reports">
+      <h2>Active Restaurants</h2>
+      <p>{{ reports.activeRestaurants }}</p>
+    </mat-card>
+    <mat-card *ngIf="reports">
+      <h2>Suspended Restaurants</h2>
+      <p>{{ reports.suspendedRestaurants }}</p>
+    </mat-card>
+    <mat-card *ngIf="reports">
+      <h2>Total Orders</h2>
+      <p>{{ reports.totalOrders }}</p>
+    </mat-card>
+    <mat-card *ngIf="reports">
+      <h2>Pending Orders</h2>
+      <p>{{ reports.pendingOrders }}</p>
+    </mat-card>
+    <mat-card *ngIf="reports">
+      <h2>Total Revenue</h2>
+      <p>₹{{ reports.totalRevenue }}</p>
+    </mat-card>
+    <mat-card *ngIf="reports">
+      <h2>Average Rating</h2>
+      <p>{{ reports.averageRating.toFixed(2) }} ★</p>
+    </mat-card>
+  </div>
+</div>

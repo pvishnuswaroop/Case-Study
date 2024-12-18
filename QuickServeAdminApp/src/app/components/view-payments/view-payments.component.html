@@ -1,0 +1,37 @@
+<h2 mat-dialog-title class="payment-title">Payments</h2>
+<mat-dialog-content>
+  <div class="payment-table-container">
+    <table mat-table [dataSource]="payments" class="payment-table">
+      <ng-container matColumnDef="paymentID">
+        <th mat-header-cell *matHeaderCellDef>Payment ID</th>
+        <td mat-cell *matCellDef="let payment">{{ payment.paymentID }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="amountPaid">
+        <th mat-header-cell *matHeaderCellDef>Order Amount</th>
+        <td mat-cell *matCellDef="let payment">{{ payment.amountPaid | currency: 'INR':true }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="paymentStatus">
+        <th mat-header-cell *matHeaderCellDef>Payment Status</th>
+        <td mat-cell *matCellDef="let payment">
+          <span class="status" [ngClass]="{
+            'status-completed': payment.paymentStatus === 'Completed',
+            'status-not-completed': payment.paymentStatus === 'Not Completed'
+          }">
+            {{ payment.paymentStatus }}
+          </span>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['paymentID', 'amountPaid', 'paymentStatus']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['paymentID', 'amountPaid', 'paymentStatus'];"></tr>
+    </table>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="close-dialog">
+  <button mat-icon-button (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-dialog-actions>

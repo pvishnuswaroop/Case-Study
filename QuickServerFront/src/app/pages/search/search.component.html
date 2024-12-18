@@ -1,0 +1,20 @@
+<div class="search-results-container">
+    <h1>Restaurants Delivering "{{ searchTerm }}"</h1>
+  
+    <div *ngIf="isLoading" class="loading">
+      <p>Loading...</p>
+    </div>
+  
+    <div *ngIf="!isLoading && restaurants.length > 0">
+      <div *ngFor="let restaurant of restaurants" class="restaurant-card">
+        <h2>{{ restaurant.name }}</h2>
+        <p>Location: {{ restaurant.location }}</p>
+        <button (click)="viewMenu(restaurant.restaurantID)">View Menu</button>
+      </div>
+    </div>
+  
+    <div *ngIf="!isLoading && restaurants.length === 0">
+      <p>No restaurants found delivering "{{ searchTerm }}".</p>
+    </div>
+  </div>
+  

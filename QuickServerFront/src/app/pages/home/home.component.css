@@ -1,0 +1,533 @@
+/* General Style */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F9F9F9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?cs=srgb&dl=pexels-chanwalrus-958545.jpg&fm=jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Darker overlay for better text contrast */
+  z-index: -1;
+}
+
+/* Hero Content */
+.hero-content {
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+  animation: slideUp 1.5s ease-out;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #fff;
+  line-height: 1.5;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 2s ease-out;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  background-color: #fff;
+  padding: 14px 25px;
+  border-radius: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.search-bar:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar input {
+  width: 80%;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.search-bar button {
+  padding: 15px 20px;
+  border-radius: 30px;
+  background-color: #FF6F61;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-bar button:hover {
+  background-color: #FF9A8B;
+  transform: scale(1.1);
+}
+
+/* Login Button */
+.login-section button {
+  padding: 14px 30px;
+  background-color: #FF6F61;
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-section button:hover {
+  background-color: #FF9A8B;
+  transform: scale(1.05);
+}
+
+/* Categories Section */
+.categories {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #2F2F2F;
+}
+
+.items-grid {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  text-align: center;
+  width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-10px);
+}
+
+.item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.item img:hover {
+  transform: scale(1.1);
+}
+
+.item p {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Trending Restaurants Section */
+.trending-restaurants {
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 1200px;
+  text-align: center; /* Centers the section title and loading text */
+  background-color: #ffffff; /* Clean white background */
+  border-radius: 20px; /* More rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.trending-restaurants h2 {
+  font-size: 36px; /* Increased font size for emphasis */
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* Adds a more impactful title style */
+  font-family: 'Poppins', sans-serif; /* Modern font family */
+}
+
+/* Loading Section */
+.loading p {
+  font-size: 20px;
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Restaurant Card Container */
+.restaurant-card-container {
+  display: flex;
+  justify-content: center; /* Centers the cards */
+  flex-wrap: wrap;
+  gap: 25px; /* Add more space between cards */
+  margin-top: 30px;
+}
+
+/* Restaurant Card Styles */
+.restaurant-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: transform 0.3s, box-shadow 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center; /* Centers text inside the card */
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden; /* Ensures no content spills outside rounded borders */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-10px); /* Slightly lift the card */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background-color: #f5f5f5; /* Subtle background change on hover */
+}
+
+.restaurant-card h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.restaurant-card p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.restaurant-card .delivery {
+  color: #28a745;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+
+/* View Menu Button */
+.restaurant-card button {
+  margin-top: 15px;
+  background-color: #fc8019;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.restaurant-card button:hover {
+  background-color: #e07014;
+  transform: scale(1.05); /* Slight scaling effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Button shadow on hover */
+}
+
+/* Grid Layout and Centering */
+.restaurant-card-container {
+  display: flex;
+  justify-content: center; /* Centers the cards */
+  flex-wrap: wrap;
+  gap: 25px; /* More space between cards */
+  margin-top: 30px;
+}
+
+
+
+/* CTA Section */
+.cta {
+  text-align: center;
+  font-size: 30px;
+  background: linear-gradient(to right, #FF6347,  #FF6347);
+  color: white;
+  padding: 50px 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.cta button {
+  padding: 20px 30px;
+  border-radius: 90px;
+  text-align: center;
+  background-color: white;
+  color: #FF6347;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta button:hover {
+  background-color: #FFC3A0;
+  transform: scale(1.05);
+}
+
+/* Menu Modal Container */
+.menu-modal-container {
+  padding: 25px;
+  max-height: 80vh; /* Adjusted to make the modal smaller */
+  overflow: auto;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fixed to fill the window */
+  top: 50%; /* Vertically centers the modal */
+  left: 50%; /* Horizontally centers the modal */
+  transform: translate(-50%, -50%); /* Ensures it's perfectly centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  z-index: 1000; /* Ensures it's on top */
+  overflow-y: auto;
+  width: 80%; /* Adjusted width for a smaller modal */
+  max-width: 1000px; /* Max width to prevent it from becoming too wide */
+  height: auto; /* Height will adapt to the content */
+}
+
+/* Header */
+.menu-modal-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 10px 0;
+  padding: 10px 0;
+  background-color: #fff;
+  position: sticky;
+  top: 0; /* Makes it stick to the top */
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid #f0f0f0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Menu Item Card Layout */
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 20px; /* Ensures the list does not touch the close button */
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px; /* Slightly reduced width for a better balance */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  text-align: center;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Item Details */
+.menu-item h3 {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.menu-item .category {
+  font-size: 0.9rem;
+  color: #3498db;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.menu-item .price {
+  font-size: 1.3rem;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.menu-item .status {
+  font-weight: bold;
+}
+
+.menu-item .status.available {
+  color: #27ae60;
+}
+
+.menu-item .status.unavailable {
+  color: #e74c3c;
+}
+
+/* Quantity Controls */
+.menu-item .quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.menu-item .quantity-controls button {
+  background-color: #3498db;
+  padding: 8px 12px; /* Equal padding to make both buttons the same size */
+  border-radius: 50%; /* Circular buttons */
+  cursor: pointer;
+  font-size: 1.4rem; /* Slightly larger font size for better visibility */
+  color: white;
+  transition: background-color 0.3s;
+  width: 40px; /* Fixed width for consistency */
+  height: 40px; /* Fixed height for consistency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item .quantity-controls button:hover {
+  background-color: #2980b9;
+}
+
+.menu-item .quantity-controls span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+/* Add to Cart Button */
+.menu-item .add-to-cart {
+  padding: 10px 20px;
+  background-color: #ff7e5f;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.menu-item .add-to-cart:hover {
+  background-color: #feb47b;
+}
+
+/* No Menu Items Available */
+.ng-template.noMenu p {
+  font-size: 1.1rem;
+  color: #777;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Close Icon */
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px; /* Adjust icon size */
+  color: #333; /* Icon color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Circular background */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.close-icon:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Slight background on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  color: #e74c3c; /* Change color on hover */
+}
+
+.close-icon i {
+  pointer-events: none; /* Ensures only the button is clickable */
+}
+
+
+
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}

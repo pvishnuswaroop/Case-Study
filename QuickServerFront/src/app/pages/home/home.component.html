@@ -1,0 +1,113 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Get Food Delivered Fast</h1>
+      <p>Discover top restaurants, delicious meals, and enjoy the best delivery service around.</p>
+      <div class="search-bar">
+        <input type="text" [(ngModel)]="searchTerm" placeholder="What are you in the mood for?" (keyup.enter)="searchItems()" />
+        <button (click)="searchItems()">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+      <div class="login-section" *ngIf="!isLoggedIn()">
+        <button routerLink="/login">
+          <i class="material-icons">login</i>
+          Login / Sign Up
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+<section class="categories">
+  <h2>What are you craving?</h2>
+  <div class="items-grid">
+    <!-- First row of 5 items -->
+    <div class="item" (click)="onCategoryClick('Biryani')">
+      <img src="https://www.licious.in/blog/wp-content/uploads/2023/01/Shutterstock_2047827035-1024x683.jpg" alt="Biryani" />
+      <p>Biryani</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Pav Bhaji')">
+      <img src="https://veganbell.com/wp-content/uploads/2023/08/Pav-Bhaji-1.jpg" alt="Pav Bhaji" />
+      <p>Pav Bhaji</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Chicken')">
+      <img src="https://www.easycookingwithmolly.com/wp-content/uploads/2023/11/air-fryer-whole-tandoori-chicken-3.jpg" alt="Chicken" />
+      <p>Chicken</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Pizza')">
+      <img src="https://cdn.shopify.com/s/files/1/0274/9503/9079/files/20220211142754-margherita-9920_5a73220e-4a1a-4d33-b38f-26e98e3cd986.jpg?v=1723650067" alt="Pizza" />
+      <p>Pizza</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Pasta')">
+      <img src="https://vegecravings.com/wp-content/uploads/2023/01/Pink-Sauce-Pasta-Recipe-Step-By-Step-Instructions-scaled.jpg" alt="Pasta" />
+      <p>Pasta</p>
+    </div>
+
+    <!-- Second row of 5 items -->
+    <div class="item" (click)="onCategoryClick('Burger')">
+      <img src="https://www.seriouseats.com/thmb/uSNXjlR9pQU0Nt9HJTzD2ZhZ45Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2015__07__20150728-homemade-whopper-food-lab-35-b3500a5c2f3e4e10aa3169d5f76e1468.jpg" alt="Burger" />
+      <p>Burger</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Dosa')">
+      <img src="https://www.cookwithmanali.com/wp-content/uploads/2020/05/Masala-Dosa.jpg" alt="Dosa" />
+      <p>Dosa</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Kulfi')">
+      <img src="https://recipes.timesofindia.com/thumb/84786580.cms?width=1200&height=900" alt="Kulfi" />
+      <p>Kulfi</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Lassi')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu04noWOQFkevpmMjoTXNRpzn28C0lsOPoKg&s" alt="Lassi" />
+      <p>Lassi</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Curry')">
+      <img src="https://www.kitchensanctuary.com/wp-content/uploads/2024/03/Paneer-Curry-square-FS.jpg" alt="Curry" />
+      <p>Curry</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Ice Cream')">
+      <img src="https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-11.jpg" alt="Ice Cream" />
+      <p>Ice Cream</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Gulab Jamun')">
+      <img src="https://chefadora.b-cdn.net/003f0f0351967a7cb6212a8d9bfaf889_f956154e73.jpg" alt="Gulab Jamun" />
+      <p>Gulab Jamun</p>
+    </div>
+    <div class="item" (click)="onCategoryClick('Samosa')">
+      <img src="https://paattiskitchen.com/wp-content/uploads/2023/03/kmc_20230226_232129-500x500.jpg?crop=1" alt="Samosa" />
+      <p>Samosa</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Trending Restaurants Section -->
+  <section class="trending-restaurants">
+    <h2>Trending Restaurants</h2>
+    <div *ngIf="isLoadingTrending" class="loading">
+      <p>Loading trending restaurants...</p>
+    </div>
+  
+    <div *ngIf="!isLoadingTrending && trendingRestaurants.length > 0">
+      <div *ngFor="let restaurant of trendingRestaurants" class="restaurant-card">
+        <h3>{{ restaurant.name }}</h3>
+        <p>{{ restaurant.location }}</p>
+        <p>{{ restaurant.rating }} ★ | {{ restaurant.label }}</p>
+        <p class="delivery">Status: Online</p>
+        <button (click)="viewMenu(restaurant.restaurantID)">View Menu</button>
+      </div>
+    </div>
+  
+    <div *ngIf="!isLoadingTrending && trendingRestaurants.length === 0">
+      <p>No trending restaurants available at the moment.</p>
+    </div>
+  </section>
+  
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <h2>Get Hungry? Start Exploring!</h2>
+    <button routerLink="/restaurants">Explore Restaurants</button>
+  </section>
+</div>

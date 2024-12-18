@@ -1,0 +1,85 @@
+/* General styles */
+.sidenav-container {
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.sidenav {
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  width: 250px;
+}
+
+.sidenav-header .logo-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.mat-nav-list {
+  padding: 0;
+}
+
+.mat-list-item button {
+  display: flex;
+  align-items: center;
+  text-transform: none;
+  color: #333;
+  font-weight: 500;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px 16px;
+}
+
+.mat-list-item button:hover {
+  background-color: #fcf0e6; /* Light Swiggy Orange */
+}
+
+.icon {
+  margin-right: 12px;
+  color: #ff7300; /* Swiggy Orange for icons */
+}
+
+.mat-toolbar.top-toolbar {
+  display: flex;
+  justify-content: flex-start; /* Aligns content to the left */
+  align-items: center;
+  background-color: #ff7300; /* Swiggy Orange */
+  color: #ffffff;
+}
+
+.menu-button {
+  margin-right: 16px; /* Adds spacing between menu button and title */
+}
+
+.toolbar-title {
+  font-size: 20px;
+  font-weight: bold;
+  flex-grow: 1; /* Allows the title to occupy remaining space */
+  text-align: left;
+}
+
+
+.main-content {
+  padding: 16px;
+  background: #f8f8f8;
+  min-height: calc(100vh - 64px); /* Ensure content takes full space */
+}
+
+.welcome-msg {
+  margin-left: auto; /* Pushes to the right side */
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.welcome-icon {
+  margin-right: 8px; /* Space between icon and text */
+  color: #ffffff; /* White color for Swiggy orange theme */
+}
